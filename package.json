@@ -1,0 +1,36 @@
+{
+  "name": "charadas-biblico",
+  "version": "1.0.0",
+  "description": "the bible game",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://robert_gon97@bitbucket.org/robert_gon97/charadas-biblico.git"
+  },
+  "keywords": [
+    "Charadas",
+    "Biblico",
+    "Bible"
+  ],
+  "author": "Robert Gonzalez",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/robert_gon97/charadas-biblico#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "firebase-admin": "^6.5.0",
+    "http": "^0.0.0",
+    "https": "^1.0.0",
+    "jwt-simple": "^0.5.5",
+    "method-override": "^2.3.10",
+    "moment": "^2.23.0",
+    "mongoose": "^5.0.1",
+    "multer": "1.4.0",
+    "nodemon": "^1.14.11"
+  }
+}
