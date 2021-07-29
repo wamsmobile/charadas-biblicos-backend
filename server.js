@@ -8,17 +8,9 @@ const config = require ('./configuracion')
 const App = require ('./src/Enlaces')
 
 var wamsServer = false
-try {
-  wamsServer = https.createServer({
-    key: fs.readFileSync('/etc/letsencrypt/live/charadas.wamsmobile.com-0001/privkey.pem'),
-    cert: fs.readFileSync('/etc/letsencrypt/live/charadas.wamsmobile.com-0001/cert.pem'),
-    ca: fs.readFileSync('/etc/letsencrypt/live/charadas.wamsmobile.com-0001/fullchain.pem')
-  }, App)
-  console.log(`🚀 🚀 🚀 Starting server in SSL mode... 🎚 🎛 🔧`)
-} catch (error) {
+
   wamsServer = http.createServer(App)
   console.log(`🚀 🚀 🚀 Starting server in normal mode... 🎚 🎛 🔧`)
-}
 
 mongoose.connect(config.BASEDEDATOS, {useNewUrlParser: true}, (errorMongo, okMongo) => {
   if (errorMongo) return console.log(`😱 😱 😱 La base de datos ${config.BASEDEDATOS} no se conecto con exito. ${errorMongo}`)
