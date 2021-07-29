@@ -19,5 +19,5 @@ module.exports={
   Google: Google,
   TOKEN_SECRETO: '1234qwerwams #$%.-',
   BASEDEDATOS: process.env.MONGODB || 'mongodb://localhost/CharadasMax',
-  UrlBackend: `https://charadas.wamsmobile.com:${PORT}/static/`
+  UrlBackend: `https://charadas.wewams.com/static/`
 }
