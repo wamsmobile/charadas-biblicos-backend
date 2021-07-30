@@ -5,18 +5,12 @@ const Categoria_Schema = Mongoose.model('Categoria_Schema')
 const config = require('./../../configuracion')
 
 function register(req, res) {
-    if (!req.userComplete) return res.status(401).send({
-        StatusCode: 401,
-        Data: {},
-        Message: `Required Login`,
-        Results: 0
-    })
     if (req.files && req.files.length) {
         req.files.forEach(objectImage => {
             req.body.icon = `${config.UrlBackend}${objectImage.filename}`
         })
     }
-    var categoria = new Categoria_Schema({
+    const categoria = new Categoria_Schema({
         contentCategory: req.body.contentCategory,
         // [
         //   {
@@ -31,7 +25,7 @@ function register(req, res) {
         locked: req.body.locked || true,
         isNew: req.body.isNew || true,
         created: Date.now()
-    })
+    });
     categoria.save()
         .then(ok => {
             return res.status(200).send({StatusCode: 200, Data: categoria, Message: 'Operation Successful', Results: 1})
