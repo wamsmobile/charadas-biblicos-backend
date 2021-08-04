@@ -16,7 +16,8 @@ const Categoria_Schema = Schema({
     icon: {type: String, default: 'http://localhost:3001/static/imgstatic/category_none.png'},
     locked: {type: Boolean, default: true},
     isNewCategory: {type: Boolean, default: true},
-    created: {type: Date, default: Date.now()}
+    created: {type: Date, default: Date.now()},
+    personal: {type: Boolean, default: true}
 })
 
 const Usuario_Schema = Schema({
