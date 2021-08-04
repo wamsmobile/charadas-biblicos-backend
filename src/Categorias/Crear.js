@@ -36,12 +36,6 @@ function register(req, res) {
 }
 
 function anadir(req, res) {
-    if (!req.userComplete) return res.status(401).send({
-        StatusCode: 401,
-        Data: {},
-        Message: `Required Login`,
-        Results: 0
-    })
     Categoria_Schema.findOne({name: req.params.name}).exec((error, respuesta) => {
         if (error) {
             return res.status(500).send({StatusCode: 500, Data: {}, Message: error, Results: 0})

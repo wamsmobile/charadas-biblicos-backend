@@ -43,7 +43,7 @@ firebase.initializeApp({
 const multer = require('./middleware/multer').middlewareMultimedia
 const autenticate = require('./middleware/validate')
 
-// Static Rutes
+// Static Routes
 App.use(express.static(__dirname + './../static'));
 App.use('/static', express.static(__dirname + './../static'))
 
@@ -57,9 +57,9 @@ const CategoriaEliminar = require('./Categorias/Eliminar')
 App.get('/api/category/all', CategoriaBusquedas.all)
 App.get('/api/category/ID/:ID', CategoriaBusquedas.id)
 App.post('/api/category/register', CategoriaCrear.register)
-App.post('/api/category/register/name/:name/word', autenticate.validateWithToken, multer.any(), CategoriaCrear.anadir)
+App.post('/api/category/register/name/:name/word', CategoriaCrear.anadir)
 App.put('/api/category/ID/:ID', autenticate.validateWithToken, multer.any(), CategoriaModificar.modify)
-App.delete('/api/category/ID/:ID', autenticate.validateWithToken, CategoriaEliminar.eliminar)
+App.delete('/api/category/ID/:ID', CategoriaEliminar.eliminar)
 
 const UsersGET = require('./Users/get')
 const UsersPOST = require('./Users/post')
