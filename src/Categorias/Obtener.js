@@ -29,10 +29,6 @@ function all(req, res) {
         if (error) {
             return res.status(500).send({StatusCode: 500, Data: {}, Message: error, Results: 0})
         } else {
-            respuesta = JSON.parse(respuesta)
-            for (let i in respuesta) {
-
-            }
             return res.status(200).send({StatusCode: 200, Data: respuesta, Message: 'Operation Successful', Results: 1})
         }
     })
